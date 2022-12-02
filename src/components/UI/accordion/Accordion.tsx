@@ -1,13 +1,23 @@
 import React from 'react';
-import AccordionItem from "./AccordionItem";
+import QuizItem from "./QuizItem";
+import {quiz} from "../../../models/quiz.model";
 
-const Accordion = () => {
+interface AccordionProps {
+    quizes: quiz[]
+}
+const Accordion: React.FC<AccordionProps> = ({quizes}) => {
+    const renderQuizes = () => {
+        return quizes.map(quiz => {
+            return <QuizItem key={quiz.id} quiz={ quiz }/>
+        })
+    }
+
     return (
-        <div>
+        <>
+            <h2>Список викторин</h2>
+            <div>{ renderQuizes() }</div>
 
-                <AccordionItem/>
-
-        </div>
+        </>
     );
 };
 
