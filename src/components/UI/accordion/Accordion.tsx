@@ -1,21 +1,24 @@
 import React from 'react';
-import QuizItem from "./QuizItem";
-import {quiz} from "../../../models/quiz.model";
+import {Quiz} from "../../../models/quiz.model";
+import QuizItem from "../admin/quiz/QuizItem";
+import {Button} from "@mui/material";
 
 interface AccordionProps {
-    quizes: quiz[]
+    quizes: Quiz[]
 }
 const Accordion: React.FC<AccordionProps> = ({quizes}) => {
     const renderQuizes = () => {
         return quizes.map(quiz => {
-            return <QuizItem key={quiz.id} quiz={ quiz }/>
+            // return <QuizItem key={quiz.id} quiz={ quiz }/>
         })
     }
+
+
 
     return (
         <>
             <h2>Список викторин</h2>
-            <div>{ renderQuizes() }</div>
+            <Button variant="contained">Создать новую викторину</Button>
 
         </>
     );
