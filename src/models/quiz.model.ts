@@ -6,6 +6,7 @@ export interface Quiz {
     createdAt: string,
     createdBy: string,
     published: boolean,
+    poster?: JSX.Element
 }
 
 export interface Question {

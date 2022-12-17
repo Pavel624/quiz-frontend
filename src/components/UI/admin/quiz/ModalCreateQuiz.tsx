@@ -1,16 +1,29 @@
 import React from 'react';
 import {Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField} from "@mui/material";
+import QuizItem from "./QuizItem";
+import {Quiz} from "@mui/icons-material";
 
-export default function ModalCreateQuiz() {
+export default function ModalCreateQuiz(props: any) {
     const [open, setOpen] = React.useState(false);
 
     const handleClickOpen = () => {
         setOpen(true);
     };
 
-    const handleClose = () => {
+    const handleClose : QuizItem = () => {
         setOpen(false);
+        return <QuizItem id="3" createdAt="2020-01-02" createdBy="1" title="" description="" published={false}></QuizItem>
     };
+
+    addQuiz = () => {
+        this.props.onClick(
+            Math.random()
+                .toString(36)
+                .substring(7) + "?"
+        );
+    };
+
+
 
     return (
         <div>

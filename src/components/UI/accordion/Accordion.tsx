@@ -1,6 +1,5 @@
 import React from 'react';
 import {Quiz} from "../../../models/quiz.model";
-import QuizItem from "../admin/quiz/QuizItem";
 import {Button} from "@mui/material";
 
 interface AccordionProps {
@@ -13,13 +12,10 @@ const Accordion: React.FC<AccordionProps> = ({quizes}) => {
         })
     }
 
-
-
     return (
         <>
             <h2>Список викторин</h2>
             <Button variant="contained">Создать новую викторину</Button>
-
         </>
     );
 };

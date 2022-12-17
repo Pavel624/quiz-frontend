@@ -15,6 +15,7 @@ export interface QuizItemProps {
     createdAt: string,
     createdBy: string,
     active: boolean,
+    poster?: JSX.Element
 }
 
 const QuizItem : React.FC<Quiz> = (props) => {
@@ -38,6 +39,7 @@ const QuizItem : React.FC<Quiz> = (props) => {
                 <TableCell align="right">{props.createdAt}</TableCell>
                 <TableCell align="right">{props.createdBy}</TableCell>
                 <TableCell align="right">{props.published.toString()}</TableCell>
+                <TableCell align="right">{props.poster}</TableCell>
                 <TableCell align="right">
                     <IconButton
                         aria-label="expand row"
